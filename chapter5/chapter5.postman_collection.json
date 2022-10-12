@@ -1,0 +1,2143 @@
+{
+	"info": {
+		"_postman_id": "7317d484-7947-45b2-89bb-0a4b2192d36e",
+		"name": "chapter5",
+		"description": "Restful API CRUD chapter4 documented on chapter5.\nMade by Honestyan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\": \"username\",\r\n\t\"email\": \"email@gmail.com\",\r\n\t\"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				},
+				"description": "Register endpoint.\nSee examples for more further information."
+			},
+			"response": [
+				{
+					"name": "register-true",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"username\",\r\n\t\"email\": \"email@gmail.com\",\r\n\t\"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"58-xdPRAT+y9MPf/Y4jlrgLWJSAW+0\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 11:33:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"name\": \"username\",\n        \"email\": \"email@gmail.com\"\n    }\n}"
+				},
+				{
+					"name": "register-duplicate",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"username\",\r\n\t\"email\": \"email@gmail.com\",\r\n\t\"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-94UqriahRi++BP6xU9YqRuKaFyc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 11:38:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"email already used!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\": \"username\",\r\n\t\"password\": \"password1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				},
+				"description": "Login endpoint. See examples for more further information."
+			},
+			"response": [
+				{
+					"name": "login-true",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"username\",\r\n\t\"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "278"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"116-Q+mKVq6xZfaemwRORtmhFUhjgyM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 13:21:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ\",\n        \"name\": \"username\",\n        \"email\": \"email@gmail.com\"\n    }\n}"
+				},
+				{
+					"name": "login-failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"username\": \"username\",\r\n\t\"password\": \"password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-4gySkksPqc7O3ePLfWVAS6Sgm4A\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 13:21:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"wrong password!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "changePassword",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\":\"password123\", \r\n    \"newPassword\":\"newpassword\", \r\n    \"confirmNewPassword\":\"newpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/changePassword",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"changePassword"
+					]
+				},
+				"description": "Change Password endpoint. See examples for more further information.\nRequire login as token, Header Authorization:token."
+			},
+			"response": [
+				{
+					"name": "changePassword-true",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"password123\", \r\n    \"newPassword\":\"newpassword\", \r\n    \"confirmNewPassword\":\"newpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/changePassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"changePassword"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"23-VpggjTd+1TjuNBcPpRAlWgtDbPk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 13:31:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\"\n}"
+				},
+				{
+					"name": "changePassword-failure",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"password123false\", \r\n    \"newPassword\":\"newpassword\", \r\n    \"confirmNewPassword\":\"newpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/changePassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"changePassword"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-4gySkksPqc7O3ePLfWVAS6Sgm4A\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 13:35:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"wrong password!\"\n}"
+				},
+				{
+					"name": "changePassword-notmatch",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"password123\", \r\n    \"newPassword\":\"newpasswordnotsame\", \r\n    \"confirmNewPassword\":\"newpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/changePassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"changePassword"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "81"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"51-qIb2g+u50WnDWKzWHe8KopA3c+g\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 13:35:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"new password and confirm new password doesn't match!\"\n}"
+				},
+				{
+					"name": "changePassword-notauthorized",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"password123\", \r\n    \"newPassword\":\"newpassword\", \r\n    \"confirmNewPassword\":\"newpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/changePassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"changePassword"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-3MUvK0JLTg2jHFfLwCjHBxYVRuM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 13:35:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"you're not authorized!\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteAccount",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth/deleteAccount",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"deleteAccount"
+					]
+				},
+				"description": "Delete Account endpoint. See examples for more further information.\nRequire login as token, Header Authorization:token."
+			},
+			"response": [
+				{
+					"name": "deleteAccount-true",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/deleteAccount",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"deleteAccount"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"23-VpggjTd+1TjuNBcPpRAlWgtDbPk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 13:43:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\"\n}"
+				},
+				{
+					"name": "deleteAccount-failure",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDYyNDgwfQ.bjPZgPFdR65AymScJgiUJQx052rdyz8dLO1RCZQvrUQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/deleteAccount",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"deleteAccount"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-3MUvK0JLTg2jHFfLwCjHBxYVRuM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 13:42:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"you're not authorized!\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "addBiodata",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\":\"John Doe\", \r\n    \"dob\":\"2000-12-25\",\r\n    \"phone\":\"08212345678\", \r\n    \"gender\":\"male\",\r\n    \"address\":\"Jl. Basuki Rahmat 60a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/biodata",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"biodata"
+					]
+				},
+				"description": "Add biodata endpoint. See examples for more further information. Require login as token, Header Authorization:token.\nbody.date is a default date() format YYYY-MM-DD.\nbody.gender is a enum male/female."
+			},
+			"response": [
+				{
+					"name": "addbiodata-true",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\":\"John Doe\", \r\n    \"dob\":\"2000-12-25\",\r\n    \"phone\":\"08212345678\", \r\n    \"gender\":\"male\",\r\n    \"address\":\"Jl. Basuki Rahmat 60a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/biodata",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"biodata"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ab-zXUHFlj8CKhh7mwd6d3XgenHdXo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:43:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"fullname\": \"John Doe\",\n        \"dob\": \"2000-12-25T00:00:00.000Z\",\n        \"phone\": \"08212345678\",\n        \"gender\": \"male\",\n        \"address\": \"Jl. Basuki Rahmat 60a\"\n    }\n}"
+				},
+				{
+					"name": "addbiodata-failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\":\"John Doe\", \r\n    \"dob\":\"2000-12-25\", \r\n    \"phone\":\"08212345678\", \r\n    \"gender\":\"male\", \r\n    \"address\":\"Jl. Basuki Rahmat 60a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/biodata",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"biodata"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-3MUvK0JLTg2jHFfLwCjHBxYVRuM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:31:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"you're not authorized!\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "editBiodata",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullname\":\"John Connor\", \r\n    \"dob\":\"1997-12-25\",\r\n    \"phone\":\"08212345678\", \r\n    \"gender\":\"male\",\r\n    \"address\":\"Jl. Basuki Rahmat 60a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/biodata",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"biodata"
+					]
+				},
+				"description": "Edit biodata endpoint. See examples for more further information. Require login as token, Header Authorization:token.\nbody.date is a default date() format YYYY-MM-DD.\nbody.gender is a enum male/female."
+			},
+			"response": [
+				{
+					"name": "editbiodata-true",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\":\"John Connor\", \r\n    \"dob\":\"1997-12-25\",\r\n    \"phone\":\"08212345678\", \r\n    \"gender\":\"male\",\r\n    \"address\":\"Jl. Basuki Rahmat 60a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/biodata",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"biodata"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "283"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11b-dVxvpuMiNAJreRY9LSKFpSoueIo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:43:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"biodata\": {\n            \"id\": 1,\n            \"user_id\": 3,\n            \"fullname\": \"John Connor\",\n            \"dob\": \"1997-12-25T00:00:00.000Z\",\n            \"phone\": \"08212345678\",\n            \"gender\": \"male\",\n            \"address\": \"Jl. Basuki Rahmat 60a\",\n            \"createdAt\": \"2022-10-06T14:30:12.732Z\",\n            \"updatedAt\": \"2022-10-06T14:43:41.758Z\"\n        }\n    }\n}"
+				},
+				{
+					"name": "editbiodata-failure",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullname\":\"John Connor\", \r\n    \"dob\":\"1997-12-25\",\r\n    \"phone\":\"08212345678\", \r\n    \"gender\":\"male\",\r\n    \"address\":\"Jl. Basuki Rahmat 60a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/biodata",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"biodata"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-3MUvK0JLTg2jHFfLwCjHBxYVRuM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:40:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"you're not authorized!\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "getBiodata",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/biodata",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"biodata"
+					]
+				},
+				"description": "Get biodata endpoint. See examples for more further information. Require login as token, Header Authorization:token."
+			},
+			"response": [
+				{
+					"name": "getbiodata-true",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/biodata",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"biodata"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "186"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ba-JkDZ3LO68paxu0G7yyBhXUvCZvg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:44:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"user_id\": 3,\n        \"fullname\": \"John Connor\",\n        \"dob\": \"1997-12-25T00:00:00.000Z\",\n        \"phone\": \"08212345678\",\n        \"gender\": \"male\",\n        \"address\": \"Jl. Basuki Rahmat 60a\"\n    }\n}"
+				},
+				{
+					"name": "getbiodata-false",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/biodata",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"biodata"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-3MUvK0JLTg2jHFfLwCjHBxYVRuM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:44:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"you're not authorized!\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "addHistory",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"action\":\"stage\", \r\n    \"value\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/history",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"history"
+					]
+				},
+				"description": "Add history endpoint. See examples for more further information. Require login as token, Header Authorization:token.\nbody.action is a enum point/stage"
+			},
+			"response": [
+				{
+					"name": "addhistory-point-true",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"action\":\"point\", \r\n    \"value\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/history",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "182"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b6-0uFwZsX5LS/LQ8ACMDv+dugK01o\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:50:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"history\": {\n            \"id\": 1,\n            \"user_id\": 3,\n            \"action\": \"point\",\n            \"value\": 100,\n            \"updatedAt\": \"2022-10-06T14:50:55.653Z\",\n            \"createdAt\": \"2022-10-06T14:50:55.653Z\"\n        }\n    }\n}"
+				},
+				{
+					"name": "addhistory-stage-true",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"action\":\"stage\", \r\n    \"value\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/history",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b4-WxyF6nW2bZZ5LOBs8SmJ7NFmLKU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:51:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"history\": {\n            \"id\": 2,\n            \"user_id\": 3,\n            \"action\": \"stage\",\n            \"value\": 1,\n            \"updatedAt\": \"2022-10-06T14:51:29.749Z\",\n            \"createdAt\": \"2022-10-06T14:51:29.749Z\"\n        }\n    }\n}"
+				},
+				{
+					"name": "addhistory-failure-action",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"action\":\"stage123\", \r\n    \"value\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/history",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-M5FbyWiRQ/oz3C3NOtnj4IrmCvU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:52:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"action not found!\"\n}"
+				},
+				{
+					"name": "addhistory-failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"action\":\"stage123\", \r\n    \"value\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/history",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-3MUvK0JLTg2jHFfLwCjHBxYVRuM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 14:53:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"you're not authorized!\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "getHistoryBiodataByUserLoggedIn",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/detail/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"detail",
+						""
+					]
+				},
+				"description": "Get user, biodata, history detail endpoint. \nSee examples for more further information. Require login as token, Header Authorization:token."
+			},
+			"response": [
+				{
+					"name": "getHistoryBiodataByUserLoggedIn-true",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/detail/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"detail",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "838"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"346-FS+e+xRO9rO3qwgT+F2ogmKzlVU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:09:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"username\": \"username\",\n            \"email\": \"email@gmail.com\",\n            \"password\": \"$2b$10$Tm18FxrB1fKzGWaIjTtU5eE2cOC.gUiYx/rTI.3.8Kh0mEKy/ZLBu\",\n            \"stage\": 1,\n            \"point\": 200,\n            \"ip\": \"::1\",\n            \"last_login\": \"2022-10-06T14:21:36.473Z\",\n            \"createdAt\": \"2022-10-06T14:21:36.475Z\",\n            \"updatedAt\": \"2022-10-06T14:51:29.744Z\"\n        },\n        \"biodata\": {\n            \"id\": 1,\n            \"user_id\": 3,\n            \"fullname\": \"John Connor\",\n            \"dob\": \"1997-12-25T00:00:00.000Z\",\n            \"phone\": \"08212345678\",\n            \"gender\": \"male\",\n            \"address\": \"Jl. Basuki Rahmat 60a\",\n            \"createdAt\": \"2022-10-06T14:30:12.732Z\",\n            \"updatedAt\": \"2022-10-06T14:43:41.758Z\"\n        },\n        \"history\": [\n            {\n                \"id\": 1,\n                \"user_id\": 3,\n                \"action\": \"point\",\n                \"value\": 100,\n                \"createdAt\": \"2022-10-06T14:50:55.653Z\",\n                \"updatedAt\": \"2022-10-06T14:50:55.653Z\"\n            },\n            {\n                \"id\": 2,\n                \"user_id\": 3,\n                \"action\": \"stage\",\n                \"value\": 1,\n                \"createdAt\": \"2022-10-06T14:51:29.749Z\",\n                \"updatedAt\": \"2022-10-06T14:51:29.749Z\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "getHistoryBiodataByUserLoggedIn-failure",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ1c2VybmFtZSIsImVtYWlsIjoiZW1haWxAZ21haWwuY29tIiwiaWF0IjoxNjY1MDY2NTkwfQ.duMtgsariDVojK_OFGGXkCW9ujAHYDJeft85RVmjWm8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/detail/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"detail",
+								""
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3f-3MUvK0JLTg2jHFfLwCjHBxYVRuM\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:10:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"you're not authorized!\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "adminLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/admin/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"login"
+					]
+				},
+				"description": "Admin Login endpoint."
+			},
+			"response": [
+				{
+					"name": "adminlogin-true",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "210"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d2-2etXM2b4eOtgX9VZhEih5MSnomQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:12:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImlhdCI6MTY2NTA2OTE1OX0.w6NUSP1bNVaxXygWb-z7SLaIElHW7jAEDiunPOPh6Cs\",\n        \"name\": \"admin\"\n    }\n}"
+				},
+				{
+					"name": "adminLogin-failure",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin12s3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/admin/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-4gySkksPqc7O3ePLfWVAS6Sgm4A\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:13:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"wrong password!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getAllUserDetail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2NTA2OTYxNX0.m3ch5DO2zVbPSIQ_tO0cIAz5Kz0QAg6exOHu6ZwK_YU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/admin/getAllUserDetail/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"getAllUserDetail",
+						""
+					]
+				},
+				"description": "Get all user detail endpoint. It will needed Authorization:token admin."
+			},
+			"response": [
+				{
+					"name": "getAllUserDetail-true",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2NTA2OTYxNX0.m3ch5DO2zVbPSIQ_tO0cIAz5Kz0QAg6exOHu6ZwK_YU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/admin/getAllUserDetail/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getAllUserDetail",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1356"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"54c-bfD099BvWPNysewfaNatOpsELEE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:20:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"user\": [\n            {\n                \"id\": 1,\n                \"username\": \"honestyan\",\n                \"email\": \"honestyan@gmail.com\",\n                \"password\": \"$2b$10$XHLS0p6krk6owyRXf7zwYe2N2sVExDXpc3O3ODoyl.XSjd7HmgeH.\",\n                \"stage\": 0,\n                \"point\": 0,\n                \"ip\": \"::1\",\n                \"last_login\": \"2022-10-06T11:30:02.580Z\",\n                \"createdAt\": \"2022-10-06T11:30:02.583Z\",\n                \"updatedAt\": \"2022-10-06T11:30:02.583Z\"\n            },\n            {\n                \"id\": 3,\n                \"username\": \"username\",\n                \"email\": \"email@gmail.com\",\n                \"password\": \"$2b$10$Tm18FxrB1fKzGWaIjTtU5eE2cOC.gUiYx/rTI.3.8Kh0mEKy/ZLBu\",\n                \"stage\": 1,\n                \"point\": 200,\n                \"ip\": \"::1\",\n                \"last_login\": \"2022-10-06T14:21:36.473Z\",\n                \"createdAt\": \"2022-10-06T14:21:36.475Z\",\n                \"updatedAt\": \"2022-10-06T14:51:29.744Z\"\n            }\n        ],\n        \"biodata\": [\n            {\n                \"id\": 1,\n                \"user_id\": 3,\n                \"fullname\": \"John Connor\",\n                \"dob\": \"1997-12-25T00:00:00.000Z\",\n                \"phone\": \"08212345678\",\n                \"gender\": \"male\",\n                \"address\": \"Jl. Basuki Rahmat 60a\",\n                \"createdAt\": \"2022-10-06T14:30:12.732Z\",\n                \"updatedAt\": \"2022-10-06T14:43:41.758Z\"\n            },\n            {\n                \"id\": 2,\n                \"user_id\": 3,\n                \"fullname\": \"John Connor\",\n                \"dob\": \"1997-12-25T00:00:00.000Z\",\n                \"phone\": \"08212345678\",\n                \"gender\": \"male\",\n                \"address\": \"Jl. Basuki Rahmat 60a\",\n                \"createdAt\": \"2022-10-06T14:43:09.498Z\",\n                \"updatedAt\": \"2022-10-06T14:43:41.758Z\"\n            }\n        ],\n        \"history\": [\n            {\n                \"id\": 1,\n                \"user_id\": 3,\n                \"action\": \"point\",\n                \"value\": 100,\n                \"createdAt\": \"2022-10-06T14:50:55.653Z\",\n                \"updatedAt\": \"2022-10-06T14:50:55.653Z\"\n            },\n            {\n                \"id\": 2,\n                \"user_id\": 3,\n                \"action\": \"stage\",\n                \"value\": 1,\n                \"createdAt\": \"2022-10-06T14:51:29.749Z\",\n                \"updatedAt\": \"2022-10-06T14:51:29.749Z\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "getAllUserDetail-failure",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCIIkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2NTA2OTYxNX0.m3ch5DO2zVbPSIQ_tO0cIAz5Kz0QAg6exOHu6ZwK_Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/admin/getAllUserDetail/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getAllUserDetail",
+								""
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a-ERMTIIeUwYNLDVrkQ/6QuEA9ZAk\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:21:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"invalid token\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getAllUserDetail/:id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2NTA2OTYxNX0.m3ch5DO2zVbPSIQ_tO0cIAz5Kz0QAg6exOHu6ZwK_YU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/admin/getAllUserDetail/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"admin",
+						"getAllUserDetail",
+						"3"
+					]
+				},
+				"description": "Get all user detail by id endpoint. It will needed Authorization:token admin."
+			},
+			"response": [
+				{
+					"name": "getAllUserDetail/:id-true",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2NTA2OTYxNX0.m3ch5DO2zVbPSIQ_tO0cIAz5Kz0QAg6exOHu6ZwK_YU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/admin/getAllUserDetail/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getAllUserDetail",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "838"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"346-FS+e+xRO9rO3qwgT+F2ogmKzlVU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:23:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"username\": \"username\",\n            \"email\": \"email@gmail.com\",\n            \"password\": \"$2b$10$Tm18FxrB1fKzGWaIjTtU5eE2cOC.gUiYx/rTI.3.8Kh0mEKy/ZLBu\",\n            \"stage\": 1,\n            \"point\": 200,\n            \"ip\": \"::1\",\n            \"last_login\": \"2022-10-06T14:21:36.473Z\",\n            \"createdAt\": \"2022-10-06T14:21:36.475Z\",\n            \"updatedAt\": \"2022-10-06T14:51:29.744Z\"\n        },\n        \"biodata\": {\n            \"id\": 1,\n            \"user_id\": 3,\n            \"fullname\": \"John Connor\",\n            \"dob\": \"1997-12-25T00:00:00.000Z\",\n            \"phone\": \"08212345678\",\n            \"gender\": \"male\",\n            \"address\": \"Jl. Basuki Rahmat 60a\",\n            \"createdAt\": \"2022-10-06T14:30:12.732Z\",\n            \"updatedAt\": \"2022-10-06T14:43:41.758Z\"\n        },\n        \"history\": [\n            {\n                \"id\": 1,\n                \"user_id\": 3,\n                \"action\": \"point\",\n                \"value\": 100,\n                \"createdAt\": \"2022-10-06T14:50:55.653Z\",\n                \"updatedAt\": \"2022-10-06T14:50:55.653Z\"\n            },\n            {\n                \"id\": 2,\n                \"user_id\": 3,\n                \"action\": \"stage\",\n                \"value\": 1,\n                \"createdAt\": \"2022-10-06T14:51:29.749Z\",\n                \"updatedAt\": \"2022-10-06T14:51:29.749Z\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "getAllUserDetail/:id-failure",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2NTA2OTYxNX0.m3ch5DO2zVbPSIQ_tO0cIAz5Kz0QAg6exOHu6ZwK_YU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/admin/getAllUserDetail/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"getAllUserDetail",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-IpHh6jJ6FN7nD+oEZFHmJlaoWoI\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 06 Oct 2022 15:24:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"user not found!\"\n}"
+				}
+			]
+		}
+	]
+}
